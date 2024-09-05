@@ -8,6 +8,8 @@ services:
   nextcloud-app:
     image: nextcloud
     restart: always
+    ports:
+      - "8080:80"
     volumes:
       - ./data:/var/www/html
     environment:
