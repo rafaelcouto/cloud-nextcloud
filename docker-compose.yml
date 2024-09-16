@@ -3,6 +3,9 @@ networks:
   tunnel:
     external: true
     name: tunnel
+  npm:
+    external: true
+    name: npm
 
 services:
   nextcloud-app:
@@ -21,6 +24,7 @@ services:
     networks:
       - local
       - tunnel
+      - npm
 
   nextcloud-db:
     image: mariadb
