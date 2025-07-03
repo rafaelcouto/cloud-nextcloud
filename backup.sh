@@ -6,7 +6,9 @@ while getopts "p:" arg; do
   esac
 done
 
-TARGET_DIR="/home/rafael/nextcloud/dump"
+TARGET_DIR="/home/rafael/nextcloud/data/backups"
+
+mkdir -p "$TARGET_DIR"
 
 # Starting maintence mode
 docker exec -u www-data nextcloud-nextcloud-app-1 php occ maintenance:mode --on
