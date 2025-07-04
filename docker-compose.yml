@@ -21,6 +21,8 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_HOST=nextcloud-db
+      - REDIS_HOST=nextcloud-redis
+      - REDIS_PORT=6379
     networks:
       - local
       - tunnel
@@ -37,5 +39,11 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
+    networks:
+      - local
+
+  nextcloud-redis:
+    image: redis:latest
+    restart: unless-stopped
     networks:
       - local
