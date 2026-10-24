@@ -23,6 +23,8 @@ services:
       - MYSQL_HOST=nextcloud-db
       - REDIS_HOST=nextcloud-redis
       - REDIS_PORT=6379
+      - PUID=1000 # Your host user's UID
+      - PGID=1000 # Your host user's GID
     networks:
       - local
       - tunnel
